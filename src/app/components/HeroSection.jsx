@@ -11,8 +11,11 @@ const HeroSection = () => {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600  to-yellow-600">Hello, I'm {""}</span>
                     <TypeAnimation/></h1>
                     <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6" >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Iure facere perferendis autem, quaerat ipsa at perspiciatis debitis optio! Temporibus repellat accusantium quia fugiat non enim cupiditate iure ipsa eveniet exercitationem?
+                    I'm a Software Engineer driven by a deep passion for harnessing technology to
+                    tackle real-world challenges. My enthusiasm for continuous personal growth is fueled
+                    by programming, and I thrive on tackling complex problems. My skill set includes
+                    proficiency in JavaScript, Java, Python, SQL, Docker, object-oriented programming,
+                    and version control with Git.
                     </p>
                     <div>
                         <ButtonComponent/>

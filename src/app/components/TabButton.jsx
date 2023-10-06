@@ -1,10 +1,17 @@
 import React from 'react'
 
-const Tabbutton = ({ active, selectTab, children}) => {
-const buttonClass = active ? 'text-white border-b border-pink-500' : "text-[#ADB7BE]"
+const TabButton = ({ active, selectTab, children}) => {
+const buttonClasses = active ?
+' text-white'
+: 'text-[#ADB7BE]';
+
     return (
-    <button>Tabbutton</button>
+    <button onClick={selectTab}>
+      <p className = {`mr-3 font-semibold hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-600  to-yellow-600 ${buttonClasses}`}>
+      {children}
+      </p>
+      </button>
   )
 }
 
-export default Tabbutton
+export default TabButton
