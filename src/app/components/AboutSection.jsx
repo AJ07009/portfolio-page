@@ -1,6 +1,5 @@
 "use client"
-import React, {useTransition, useState} from 'react'
-import Image from 'next/image'
+import { useState, useTransition } from 'react';
 import TabButton from './TabButton';
 
 

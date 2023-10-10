@@ -8,7 +8,7 @@ const TypeAnimationStyle = () => {
             'Aidan Josias',
             2000,
             'a Tech founder',
-            2000, // wait 1s before replacing "Mice" with "Hamsters"
+            2000,
             'a Software Engineer',
             2000,
             'a FullStack Dev',
