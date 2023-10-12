@@ -60,18 +60,18 @@ const projectsData = [
   // Add more project data as needed
 ];
 
-const Home = () => {
+const CardComponent = () => {
         const [tag, setTag] = useState("All");
-        const ref = useRef(null);
-        const isInView = useInView(ref, { once: true });
+        // const ref = useRef(null);
+        // const isInView = useInView(ref, { once: true });
     
         const handleTagChange = (newTag) => {
         setTag(newTag);
         };
     
-        // const filteredProjects = projectsData.filter((project) =>
-        // project.tag.includes(tag)
-        // );
+        const filteredProjects = projectsData.filter((project) =>
+        project.tag.includes(tag)
+        );
     
         // const cardVariants = {
         // initial: { y: 50, opacity: 0 },
@@ -86,22 +86,22 @@ const Home = () => {
     <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
     <ProjectTag
         onClick={handleTagChange}
-        name="All"
+        name = "All"
         isSelected={tag === "All"}
         />
     <ProjectTag
         onClick={handleTagChange}
-        name="Web"
+        name = "Web"
         isSelected={tag === "Web"}
         />
     <ProjectTag
         onClick={handleTagChange}
-        name="Mobile"
+        name = "Mobile"
         isSelected={tag === "Mobile"}
         />
     </div>
     <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {projectsData.map((project) => (
+        {filteredProjects.map((project) => (
         <ProjectCard
             key={project.id}
             title={project.title}
@@ -123,4 +123,4 @@ const Home = () => {
 );
 }
 
-export default Home;
+export default CardComponent;

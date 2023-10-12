@@ -1,5 +1,5 @@
 "use client"
-import { Badge, Button } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";

@@ -1,17 +1,21 @@
 import { AboutSection } from "./components/AboutSection"
 import CardComponent from "./components/CardComponent"
+import EmailSection from "./components/EmailSection"
 import HeroSection from "./components/HeroSection"
 import Navbar from "./components/Navbar"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-black md:ml-12">
+    <main className="flex min-h-screen flex-col bg-[#121212]">
       <Navbar />
-      <div className="container md:mt-40 mt-20 mx-auto px-12 py-4 flex " >
+      <div class="container mt-24 mx-auto px-12 py-4">
         <HeroSection />
-      </div>
+        {/* <AchievementsSection /> */}
         <AboutSection />
         <CardComponent />
+        {/* <EmailSection /> */}
+      </div>
+      {/* <Footer /> */}
     </main>
   )
 }
