@@ -17,6 +17,7 @@
     "@material-tailwind/react": "^2.1.2",
     "@mui/material": "^5.14.12",
     "@tabler/icons-react": "^2.38.0",
+    "framer-motion": "^10.16.4",
     "next": "^13.5.4",
     "react": "latest",
     "react-dom": "latest",
