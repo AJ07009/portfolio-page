@@ -1,6 +1,9 @@
+"use client"
 import Image from "next/image";
 import TypeAnimation from "./TypeAnimation";
 import ButtonComponent from "./ButtonComponent";
+import { Link } from "@mui/material";
+import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 
 const HeroSection = () => {
     return (
