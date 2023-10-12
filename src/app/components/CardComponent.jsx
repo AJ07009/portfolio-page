@@ -1,14 +1,17 @@
+"use client"
 import { IconHeart } from '@tabler/icons-react';
 import Link from 'next/link';
 import ProjectCard from '../components/ProjectCard';
 import ProjectTag from '../components/ProjectTag';
+import { useState, useRef, useInView } from 'react';
+
 
 const projectsData = [
 {
     id: 1,
     title: "NextJs Portfolio ",
     description: "This website was created as a portfolio page and a way for me to learn NextJs and Tailwind CSS, there are also some Material UI.",
-    image: "/images/projects/portfolio_page.jpg",
+    image: "/images/projects/portfolio_page.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/AJ07009/portfolio-page",
     previewUrl: "/",
@@ -32,9 +35,9 @@ const projectsData = [
     id: 3,
     title: "Webscrapper",
     description: "Learning to utilize the Scrapy framework for webscrapping and automation.\n",
-    image: "/images/projects/Scrapy.png",
+    image: "/images/projects/Scrappy.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/AJ07009/learning_webscrapping",
     previewUrl: "/",
     language1:"Scrapy",
     language2: "Python",
@@ -42,11 +45,11 @@ const projectsData = [
 },
 {
     id: 4,
-    title: "Quotes app",
+    title: "Flutter Quotes app",
     description: "A simple app that allows the user to upload quotes to a database. The entire app is bundled in a Docker image.",
-    image: "/images/projects/Scrapy.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
+    image: "/images/projects/Flutter_quote_project.jpg",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/AJ07009/Flutter_quotes_project",
     previewUrl: "/",
     language1:"Docker",
     language2: "Flutter Dart",
@@ -57,16 +60,45 @@ const projectsData = [
   // Add more project data as needed
 ];
 
-function Home() {
-return (
+const Home = () => {
+        const [tag, setTag] = useState("All");
+        const ref = useRef(null);
+        const isInView = useInView(ref, { once: true });
+    
+        const handleTagChange = (newTag) => {
+        setTag(newTag);
+        };
+    
+        // const filteredProjects = projectsData.filter((project) =>
+        // project.tag.includes(tag)
+        // );
+    
+        // const cardVariants = {
+        // initial: { y: 50, opacity: 0 },
+        // animate: { y: 0, opacity: 1 },
+        // };
+
+    return (
     <section id="projects">
     <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
     </h2>
     <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag name="All" />
-        <ProjectTag name="Web" />
-        <ProjectTag name="Mobile" />
+    <ProjectTag
+        onClick={handleTagChange}
+        name="All"
+        isSelected={tag === "All"}
+        />
+    <ProjectTag
+        onClick={handleTagChange}
+        name="Web"
+        isSelected={tag === "Web"}
+        />
+    <ProjectTag
+        onClick={handleTagChange}
+        name="Mobile"
+        isSelected={tag === "Mobile"}
+        />
     </div>
     <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
         {projectsData.map((project) => (
@@ -80,6 +112,7 @@ return (
             language1={project.language1}
             language2={project.language2}
             language3={project.language3}
+            language4={project.language4}
         />
         ))}
     </ul>

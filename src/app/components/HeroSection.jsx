@@ -14,7 +14,7 @@ const HeroSection = () => {
                     I'm a Software Engineer driven by a deep passion for harnessing technology to
                     tackle real-world challenges. My enthusiasm for continuous personal growth is fueled
                     by programming, and I thrive on tackling complex problems. My skill set includes
-                    proficiency in JavaScript, Java, Python, SQL, Docker, object-oriented programming,
+                    proficiency in JavaScript, Java, Python, SQL, Docker, object-oriented programming
                     and version control with Git.
                     </p>
                     <div>

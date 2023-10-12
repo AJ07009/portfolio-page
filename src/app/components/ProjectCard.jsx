@@ -5,7 +5,7 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1,language2,language3 }) => {
+const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1,language2,language3,language4  }) => {
 return (
     <div>
     <div
@@ -39,6 +39,9 @@ return (
         </Button>
         <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
         {language3}
+        </Button>
+        <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
+        {language4}
         </Button>
     </div>
     </div>
