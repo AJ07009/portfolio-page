@@ -33,11 +33,24 @@ const EmailSection = () => {
         const response = await fetch(endpoint, options);
         const resData = await response.json();
 
-        if (resData.status === 200){
-            console.log('Message successful!');
-            setEmailSubmittion(true);
+        try {
+            const response = await fetch(endpoint, options);
+            if (response.ok) {
+            const resData = await response.json();
+            if (resData.status === 200) {
+                console.log('Message sent successfully!');
+                setEmailSubmission(true);
+            } else {
+                console.error('Server returned an error:', resData);
+            }
+            } else {
+            console.error('Failed to send the message. Server responded with status:', response.status);
+            }
+        } catch (error) {
+            console.error('An error occurred while sending the message:', error);
         }
     }
+
 return (
     <section
     id="contact"
@@ -46,13 +59,13 @@ return (
     <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
         <div className="z-10">
             <h5 className="text-xl font-bold text-white my-2">
-            Let's Connect
+            Let&apos;s Connect
             </h5>
             <p className="text-[#ADB7BE] mb-4 max-w-md">
             {" "}
-            I'm actively exploring new opportunities, and my inbox is ready to receive your messages.
+            I&apos;m actively exploring new opportunities, and my inbox is ready to receive your messages.
             Whether you have inquiries or simply want to say hello,
-            I'll make every effort to respond promptly
+            I&apos;ll make every effort to respond promptly
             </p>
             <div className='flex flex-row'>
             <Link href="https://github.com/AJ07009" className="px-6 py-3 w-full sm:w-fit rounded-full mr-4">

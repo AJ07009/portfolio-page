@@ -6,7 +6,7 @@ const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST (req, res) {
     const { body } = req.json;
-    const { email,subject, message } = body;
+    const { email, subject, message } = body;
 
 
     // const message = FormData.get('message');
@@ -15,7 +15,7 @@ export async function POST (req, res) {
 
     try {
     const data = await resend.emails.send({
-        from: fromEmail,
+        from: 'Info <onboarding@resend.dev>',
         to: [fromEmail, email],
         subject: subject,
         
