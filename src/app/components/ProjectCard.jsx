@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1,language2,language3,language4  }) => {
 return (
-    <div>
+<div>
     <div
         className="h-52 md:h-72 rounded-t-xl relative group"
         style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
@@ -44,7 +44,7 @@ return (
         {language4}
         </Button>
     </div>
-    </div>
+</div>
 );
 };
 

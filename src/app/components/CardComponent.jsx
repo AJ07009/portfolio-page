@@ -1,10 +1,9 @@
-"use client"
-import { IconHeart } from '@tabler/icons-react';
-import Link from 'next/link';
-import ProjectCard from '../components/ProjectCard';
-import ProjectTag from '../components/ProjectTag';
-import { useState, useRef, useInView } from 'react';
-
+"use client";
+import React, { useState, useRef } from "react";
+import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
+import { AnimatePresence, motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 const projectsData = [
 {
@@ -62,8 +61,8 @@ const projectsData = [
 
 const CardComponent = () => {
         const [tag, setTag] = useState("All");
-        // const ref = useRef(null);
-        // const isInView = useInView(ref, { once: true });
+        const ref = useRef(null);
+        const isInView = useInView(ref, { once: false });
     
         const handleTagChange = (newTag) => {
         setTag(newTag);
@@ -73,10 +72,10 @@ const CardComponent = () => {
         project.tag.includes(tag)
         );
     
-        // const cardVariants = {
-        // initial: { y: 50, opacity: 0 },
-        // animate: { y: 0, opacity: 1 },
-        // };
+        const cardVariants = {
+        initial: { y: 50, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        };
 
     return (
     <section id="projects">
@@ -100,25 +99,31 @@ const CardComponent = () => {
         isSelected={tag === "Mobile"}
         />
     </div>
-    <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project) => (
-        <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-            language1={project.language1}
-            language2={project.language2}
-            language3={project.language3}
-            language4={project.language4}
-        />
+    <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {filteredProjects.map((project, index) => (
+        <AnimatePresence>
+            <motion.li
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+                <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                language1={project.language1}
+                language2={project.language2}
+                language3={project.language3}
+                language4={project.language4}
+                />
+            </motion.li>
+        </AnimatePresence>
         ))}
     </ul>
-    <div className="flex items-center">
-        
-    </div>
     </section>
 );
 }
