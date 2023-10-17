@@ -1,3 +1,5 @@
+const { colors } = require('@mui/material');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,6 +15,11 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    colors: {
+      ...colors,
+      primary: colors.purple,
+      secondary: colors.yellow
+    }
   },
   plugins: [],
 }
