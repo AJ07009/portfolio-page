@@ -7,57 +7,52 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    title: "NextJs Portfolio ",
+    description: "This website was created as a portfolio page and a way for me to learn NextJs and Tailwind CSS, there are also some Material UI.",
+    image: "/images/projects/portfolio_page.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/AJ07009/portfolio-page",
     previewUrl: "/",
+    language1:["NextJs"],
+    language2: "Tailwind Css",
+    language3: "Material UI",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "CartShare Website ",
+    description: "CartShare is a price comparison and loyalty program packaged together with an OCR system and webscrappers.\n",
+    image: "/images/projects/Cartshare_web_image.png",
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    language1:["NextJs"],
+    language2: "Tailwind Css",
+    language3: "Material UI",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
+    title: "Webscrapper",
+    description: "Learning to utilize the Scrapy framework for webscrapping and automation.\n",
+    image: "/images/projects/Scrappy.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/AJ07009/learning_webscrapping",
     previewUrl: "/",
+    language1:"Scrapy",
+    language2: "Python",
+    language3: "MySQL",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
+    title: "Flutter Quotes app",
+    description: "A simple app that allows the user to upload quotes to a database. The entire app is bundled in a Docker image.",
+    image: "/images/projects/Flutter_quote_project.jpg",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/AJ07009/Flutter_quotes_project",
     previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    language1:"Docker",
+    language2: "Flutter Dart",
+    language3: "MySQL",
+    language4: "Java",
   },
 ];
 
@@ -117,6 +112,10 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              language1={project.language1}
+              language2={project.language2}
+              language3={project.language3}
+              language4={project.language4}
             />
           </motion.li>
         ))}
