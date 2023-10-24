@@ -32,9 +32,17 @@ const baseUrl = process.env.RESEND_API_KEY
     console.log(email, subject, message);
   }
 export const YelpRecentLoginEmail = ({
-  
+  userFirstName = 'Zeno',
+  loginDate = new Date('September 7, 2022, 10:58 am'),
+  loginDevice = 'Chrome on Mac OS X',
+  loginLocation = 'Upland, California, United States',
+  loginIp = '47.149.53.167',
 }: YelpRecentLoginEmailProps) => {
- 
+  const formattedDate = new Intl.DateTimeFormat('en', {
+    dateStyle: 'long',
+    timeStyle: 'short',
+  }).format(loginDate);
+
   return (
     <Html>
       <Head />
