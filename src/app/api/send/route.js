@@ -15,15 +15,9 @@ export async function POST(req, res) {
         subject: subject,
         react: (
             <div style={styles.container}>
-            <img
-                src="public\images\Email banner.png"
-                alt="Banner"
-                style={styles.banner}
-            />
-            <h1 style={styles.content}>{subject}</h1>
-            <p style={styles.content}>Thank you for contacting us!</p>
+            <p style={styles.content}>Thank you for contacting me, I will get in touch with you soon</p>
             <p>New message submitted:</p>
-            <p>{message}</p>
+            <p style={styles.c0ntent}>{message}</p>
             </div>
         ),
     });
@@ -47,4 +41,7 @@ const styles = {
         fontSize: 26,
         fontWeight: 'bold',
     },
+    c0ntent: {
+        fontSize: 18,
+    }
 };
