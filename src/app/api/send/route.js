@@ -1,7 +1,6 @@
 // import { EmailTemplate } from '../../../components/EmailTemplate';
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import YelpRecentLoginEmail from "@/app/emails/template";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
@@ -14,17 +13,38 @@ export async function POST(req, res) {
         from: fromEmail,
         to: [fromEmail, email],
         subject: subject,
-        react: YelpRecentLoginEmail()
-        // <>
-        //     <h1>{subject}</h1>
-        //     <p>Thank you for contacting us!</p>
-        //     <p>New message submitted:</p>
-        // < p>{message}</p>
-        // </>
-        // ),
+        react: (
+            <div style={styles.container}>
+            <img
+                src="public\images\Email banner.png"
+                alt="Banner"
+                style={styles.banner}
+            />
+            <h1 style={styles.content}>{subject}</h1>
+            <p style={styles.content}>Thank you for contacting us!</p>
+            <p>New message submitted:</p>
+            <p>{message}</p>
+            </div>
+        ),
     });
     return NextResponse.json(data);
     } catch (error) {
     return NextResponse.json({ error });
     }
 }
+
+const styles = {
+    container: {
+        background: 'black',
+        color: 'white',
+        textAlign: 'center',
+        padding: '20px',
+    },
+    banner: {
+        width: '100%',
+    },
+    content: {
+        fontSize: 26,
+        fontWeight: 'bold',
+    },
+};
