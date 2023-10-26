@@ -16,6 +16,7 @@ const projectsData = [
     language1:["NextJs"],
     language2: "Tailwind Css",
     language3: "Material UI",
+    check_the_code: "https://github.com/AJ07009/portfolio-page",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const projectsData = [
     language1:["NextJs"],
     language2: "Tailwind Css",
     language3: "Material UI",
+    check_the_code: "",
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const projectsData = [
     language1:"Scrapy",
     language2: "Python",
     language3: "MySQL",
+    check_the_code: "https://github.com/AJ07009/learning_webscrapping",
   },
   {
     id: 4,
@@ -53,6 +56,7 @@ const projectsData = [
     language2: "Flutter Dart",
     language3: "MySQL",
     language4: "Java",
+    check_the_code: "https://github.com/AJ07009/Flutter_quotes_project",
   },
 ];
 
@@ -116,6 +120,7 @@ const ProjectsSection = () => {
               language2={project.language2}
               language3={project.language3}
               language4={project.language4}
+              check_the_code={project.check_the_code}
             />
           </motion.li>
         ))}

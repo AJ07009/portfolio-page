@@ -3,7 +3,7 @@ import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "@mui/material";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1, language2, language3, language4 }) => {
+const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1, language2, language3, language4, check_the_code }) => {
   return (
     <div>
       <div
@@ -28,16 +28,21 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, language1
       <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
         <h5 className="text-xl font-semibold mb-2">{title}</h5>
         <p className="text-[#ADB7BE]">{description}</p>
-        <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
+        <Link
+        href = {check_the_code}
+        className="rounded-lg text-center px-3 inline-block py-2 w-full sm:w-fit  bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3">
+          Code
+        </Link>
+        <Button className="font-normal text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
         {language1}
         </Button>
-        <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
+        <Button className="font-normal text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
         {language2}
         </Button>
-        <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
+        <Button className="font-normal text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
         {language3}
         </Button>
-        <Button className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
+        <Button className="font-normal text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-purple-600  to-yellow-600">
         {language4}
         </Button>
       </div>
